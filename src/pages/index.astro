@@ -1,0 +1,264 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+
+<BaseLayout>
+  <div class="relative z-10 max-w-[680px] mx-auto px-6">
+
+    <!-- ── HERO ─────────────────────────────────────── -->
+    <section class="pt-24 pb-[72px]">
+
+      <!-- Badge -->
+      <div class="anim-1 inline-flex items-center gap-2
+                  font-mono text-[10px] tracking-[0.16em] uppercase
+                  bg-[rgba(245,158,11,0.08)] border border-[rgba(245,158,11,0.2)]
+                  text-(--color-amber) px-3.5 py-1.5 rounded-sm mb-7">
+        abdurrahman.sbs ·
+        <a href="https://rotigrosirntb.com"
+           class="text-(--color-amber) no-underline
+                  border-b border-[rgba(245,158,11,0.3)]
+                  hover:border-(--color-amber) transition-colors">
+          Kios Aminah
+        </a>
+      </div>
+
+      <!-- Name -->
+      <h1 class="anim-2 text-[clamp(36px,6vw,56px)] font-medium
+                 leading-[1.1] tracking-[-0.02em] text-(--color-text)">
+        Muhammad<br />
+        <span class="text-(--color-accent)">Abdurrahman.</span>
+      </h1>
+
+      <!-- Bio -->
+      <p class="anim-3 mt-4 text-[15px] font-light text-(--color-muted)
+                leading-[1.8] max-w-[480px]">
+        Teknisi & developer di Dinas Perhubungan Kota Mataram.
+        Membangun sistem pemerintahan, tools AI, dan bisnis lokal
+        yang berjalan nyata di lapangan.
+      </p>
+
+      <!-- Terminal -->
+      <div class="anim-4 mt-8 bg-(--color-bg2) border border-(--color-bdr) rounded-md overflow-hidden">
+        <div class="px-3.5 py-2.5 bg-[rgba(255,255,255,0.02)]
+                    border-b border-(--color-bdr) flex items-center gap-1.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+          <span class="font-mono text-[10px] text-(--color-muted) ml-1.5">~ abdurrahman.sbs</span>
+        </div>
+        <div class="px-4 py-4 font-mono text-[12px] leading-[2.1]">
+          <div>
+            <span class="text-(--color-accent)">❯ </span>
+            <span class="text-(--color-muted)">brv query "who is abdurrahman?"</span>
+          </div>
+          <div>
+            <span class="text-(--color-muted)">  </span>
+            <span class="text-[#a78bfa]">role</span>
+            <span class="text-(--color-muted)">     → </span>
+            <span class="text-(--color-amber)">"ASN Dishub Mataram · Teknisi ATCS · Full-stack Dev"</span>
+          </div>
+          <div>
+            <span class="text-(--color-muted)">  </span>
+            <span class="text-[#a78bfa]">stack</span>
+            <span class="text-(--color-muted)">    → </span>
+            <span class="text-(--color-amber)">"Laravel · Next.js · Astro · Vue.js · Three.js"</span>
+          </div>
+          <div>
+            <span class="text-(--color-muted)">  </span>
+            <span class="text-[#a78bfa]">infra</span>
+            <span class="text-(--color-muted)">    → </span>
+            <span class="text-(--color-amber)">"Linux · MikroTik · ESP32 · Raspberry Pi · MQTT"</span>
+          </div>
+          <div>
+            <span class="text-(--color-muted)">  </span>
+            <span class="text-[#a78bfa]">deploy</span>
+            <span class="text-(--color-muted)">   → </span>
+            <span class="text-(--color-amber)">"Cloudflare · Vercel · Supabase · PostgreSQL"</span>
+          </div>
+          <div>
+            <span class="text-(--color-muted)">  </span>
+            <span class="text-[#a78bfa]">location</span>
+            <span class="text-(--color-muted)"> → </span>
+            <span class="text-(--color-amber)">"Mataram, Nusa Tenggara Barat"</span>
+          </div>
+          <div>
+            <span class="text-(--color-muted)">  </span>
+            <span class="text-[#a78bfa]">open</span>
+            <span class="text-(--color-muted)">     → </span>
+            <span class="text-(--color-accent)">"for collaboration ✓"</span>
+          </div>
+          <div>
+            <span class="text-(--color-accent)">❯ </span>
+            <span class="term-cursor"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="anim-5 mt-8 flex gap-3 flex-wrap">
+        <a href="#work"
+           class="px-6 py-2.5 bg-(--color-accent) text-(--color-bg)
+                  font-mono text-[11px] tracking-widest font-medium
+                  rounded-sm no-underline transition-all duration-200
+                  hover:bg-[#00b894] hover:-translate-y-px
+                  hover:shadow-[0_4px_20px_rgba(0,212,170,0.2)]">
+          ↘ See Work
+        </a>
+        <a href="#contact"
+           class="px-6 py-2.5 border border-(--color-bdr) text-(--color-muted)
+                  font-mono text-[11px] tracking-widest rounded-sm no-underline
+                  transition-all duration-200
+                  hover:border-[rgba(0,212,170,0.3)] hover:text-(--color-accent)">
+          ✉ Contact
+        </a>
+      </div>
+    </section>
+
+    <hr class="border-0 border-t border-(--color-bdr)" />
+
+    <!-- ── WORK ──────────────────────────────────────── -->
+    <section class="py-[72px]" id="work">
+      <SectionLabel label="selected work" />
+      <div class="flex flex-col gap-0.5">
+        {projects.map(p => <ProjectCard project={p} />)}
+      </div>
+    </section>
+
+    <hr class="border-0 border-t border-(--color-bdr)" />
+
+    <!-- ── BISNIS ─────────────────────────────────────── -->
+    <section class="py-[72px]">
+      <SectionLabel label="bisnis saya" />
+      <p class="text-sm font-light text-(--color-muted) max-w-[480px] leading-relaxed mb-7">
+        Di luar pengembangan software, saya menjalankan usaha distribusi roti AOK
+        di Mataram, NTB — sebagai fund manager dengan skema bagi hasil terstruktur.
+      </p>
+
+      <a href="https://rotigrosirntb.com" target="_blank" rel="noopener noreferrer"
+         class="rev group flex items-center gap-5 p-7 bg-(--color-bg2)
+                border border-(--color-bdr) rounded-lg no-underline
+                transition-all duration-200 relative overflow-hidden
+                hover:border-[rgba(245,158,11,0.3)] hover:-translate-y-0.5
+                hover:shadow-[0_8px_32px_rgba(245,158,11,0.06)]">
+
+        <span class="absolute top-0 left-0 right-0 h-px
+                     bg-gradient-to-r from-[#F59E0B] to-orange-500
+                     opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+        <div class="w-14 h-14 bg-[rgba(245,158,11,0.1)]
+                    border border-[rgba(245,158,11,0.2)]
+                    rounded-xl flex items-center justify-center
+                    text-2xl flex-shrink-0">
+          🍞
+        </div>
+
+        <div class="flex-1 min-w-0">
+          <div class="text-[17px] font-medium text-(--color-text) mb-1">
+            Kios Aminah — Grosir Roti AOK
+          </div>
+          <div class="text-[13px] font-light text-(--color-muted)">
+            Supplier & distributor roti AOK · Mataram, Nusa Tenggara Barat
+          </div>
+          <div class="flex flex-wrap gap-1.5 mt-3">
+            {['UMKM', 'Grosir Roti', 'Mataram NTB', 'Fund Manager'].map(t => (
+              <span class="font-mono text-[9px] text-[rgba(245,158,11,0.6)]
+                           border border-[rgba(245,158,11,0.15)] px-2 py-0.5 rounded-sm">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <span class="text-(--color-muted) text-lg flex-shrink-0
+                     group-hover:text-(--color-amber) group-hover:translate-x-1
+                     transition-all duration-200">
+          →
+        </span>
+      </a>
+    </section>
+
+    <hr class="border-0 border-t border-(--color-bdr)" />
+
+    <!-- ── CONTACT ────────────────────────────────────── -->
+    <section class="py-[72px]" id="contact">
+      <SectionLabel label="get in touch" />
+      <div class="flex flex-col gap-0.5">
+
+        <a href="mailto:rahmancoolboy34@gmail.com"
+           class="rev group flex items-center gap-4 px-4 py-4
+                  border border-(--color-bdr) rounded bg-(--color-bg2) no-underline
+                  transition-all duration-200
+                  hover:border-[rgba(0,212,170,0.25)]
+                  hover:bg-[rgba(0,212,170,0.02)]
+                  hover:translate-x-0.5">
+          <div class="w-8 h-8 border border-(--color-bdr) rounded
+                      flex items-center justify-center text-sm flex-shrink-0">✉</div>
+          <div>
+            <div class="font-mono text-[9px] tracking-[0.14em] uppercase
+                        text-(--color-muted) mb-0.5">Email</div>
+            <div class="font-mono text-[12px] text-(--color-text)">
+              rahmancoolboy34@gmail.com
+            </div>
+          </div>
+          <span class="ml-auto text-(--color-muted) text-xs
+                       group-hover:text-(--color-accent) transition-colors">→</span>
+        </a>
+
+        <a href="https://wa.me/6285339432420" target="_blank" rel="noopener noreferrer"
+           class="rev group flex items-center gap-4 px-4 py-4
+                  border border-(--color-bdr) rounded bg-(--color-bg2) no-underline
+                  transition-all duration-200
+                  hover:border-[rgba(0,212,170,0.25)]
+                  hover:bg-[rgba(0,212,170,0.02)]
+                  hover:translate-x-0.5">
+          <div class="w-8 h-8 border border-(--color-bdr) rounded
+                      flex items-center justify-center text-sm flex-shrink-0">📱</div>
+          <div>
+            <div class="font-mono text-[9px] tracking-[0.14em] uppercase
+                        text-(--color-muted) mb-0.5">WhatsApp</div>
+            <div class="font-mono text-[12px] text-(--color-text)">
+              085 339 432 420
+            </div>
+          </div>
+          <span class="ml-auto text-(--color-muted) text-xs
+                       group-hover:text-(--color-accent) transition-colors">→</span>
+        </a>
+
+        <a href="https://github.com/rahman-wq" target="_blank" rel="noopener noreferrer"
+           class="rev group flex items-center gap-4 px-4 py-4
+                  border border-(--color-bdr) rounded bg-(--color-bg2) no-underline
+                  transition-all duration-200
+                  hover:border-[rgba(0,212,170,0.25)]
+                  hover:bg-[rgba(0,212,170,0.02)]
+                  hover:translate-x-0.5">
+          <div class="w-8 h-8 border border-(--color-bdr) rounded
+                      flex items-center justify-center text-sm flex-shrink-0">⌥</div>
+          <div>
+            <div class="font-mono text-[9px] tracking-[0.14em] uppercase
+                        text-(--color-muted) mb-0.5">GitHub</div>
+            <div class="font-mono text-[12px] text-(--color-text)">
+              github.com/rahman-wq
+            </div>
+          </div>
+          <span class="ml-auto text-(--color-muted) text-xs
+                       group-hover:text-(--color-accent) transition-colors">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-(--color-bdr)
+                 max-w-[680px] mx-auto px-6 py-5
+                 flex items-center justify-between">
+    <div class="font-mono text-[11px] text-(--color-muted)">
+      <span class="text-(--color-accent)">❯ </span>abdurrahman.sbs
+    </div>
+    <div class="font-mono text-[10px] text-(--color-muted)">© 2026 · Mataram, NTB</div>
+  </footer>
+</BaseLayout>

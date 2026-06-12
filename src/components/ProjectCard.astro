@@ -1,0 +1,55 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const accentClass: Record<string, string> = {
+  active:   'text-(--color-accent)',
+  live:     'text-(--color-accent)',
+  dev:      'text-(--color-amber)',
+  planning: 'text-(--color-muted)',
+};
+---
+
+<a
+  href={project.url ?? '#'}
+  target={project.url ? '_blank' : '_self'}
+  rel={project.url ? 'noopener noreferrer' : ''}
+  class="rev group block p-5 rounded border border-(--color-bdr) bg-(--color-bg2)
+         border-l-2 border-l-transparent no-underline
+         hover:border-l-(--color-accent) hover:bg-[rgba(0,212,170,0.02)]
+         transition-all duration-200"
+>
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <div class="text-[15px] font-medium text-(--color-text) mb-1">
+        {project.title}
+      </div>
+      <div class:list={['font-mono text-[10px] tracking-widest', accentClass[project.status]]}>
+        {project.subtitle} · {project.statusLabel}
+      </div>
+    </div>
+    <span class="text-sm text-(--color-muted) flex-shrink-0 mt-0.5
+                 group-hover:text-(--color-accent) group-hover:translate-x-0.5
+                 group-hover:-translate-y-0.5 transition-all duration-200">
+      ↗
+    </span>
+  </div>
+
+  <p class="mt-3 text-[13px] font-light text-(--color-muted) leading-relaxed">
+    {project.description}
+  </p>
+
+  <div class="mt-3 flex flex-wrap gap-1.5">
+    {project.stack.map(tag => (
+      <span class="font-mono text-[9px] tracking-wide text-(--color-muted)
+                   border border-(--color-bdr) px-2 py-0.5 rounded-sm">
+        {tag}
+      </span>
+    ))}
+  </div>
+</a>
