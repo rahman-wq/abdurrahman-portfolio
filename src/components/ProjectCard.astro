@@ -29,8 +29,10 @@ const accentClass: Record<string, string> = {
       <div class="text-[15px] font-medium text-(--color-text) mb-1">
         {project.title}
       </div>
-      <div class:list={['font-mono text-[10px] tracking-widest', accentClass[project.status]]}>
-        {project.subtitle} · {project.statusLabel}
+      <div class:list={['font-mono text-[10px] tracking-wide leading-relaxed', accentClass[project.status]]}>
+        <span class="block sm:inline">{project.subtitle}</span>
+        <span class="hidden sm:inline"> · </span>
+        <span class="block sm:inline opacity-70">{project.statusLabel}</span>
       </div>
     </div>
     <span class="text-sm text-(--color-muted) flex-shrink-0 mt-0.5
