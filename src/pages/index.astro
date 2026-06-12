@@ -25,18 +25,41 @@ import { projects } from '../data/projects';
         </a>
       </div>
 
-      <!-- Name -->
-      <h1 class="anim-2 text-[clamp(36px,6vw,56px)] font-medium
-                 leading-[1.1] tracking-[-0.02em] text-(--color-text)">
-        Muhammad<br />
-        <span class="text-(--color-accent)">Abdurrahman.</span>
-      </h1>
+      <!-- Name + Photo row -->
+      <div class="flex flex-col-reverse sm:flex-row sm:items-center
+                  sm:justify-between gap-6 mb-4">
 
-      <!-- Bio -->
-      <p class="anim-3 mt-4 text-[15px] font-light text-(--color-muted) leading-[1.8]">
-        Teknisi & developer di Dinas Perhubungan Kota Mataram —
-        membangun sistem pemerintahan, tools AI, dan bisnis lokal.
-      </p>
+        <!-- Left: name + bio -->
+        <div class="flex-1">
+          <h1 class="anim-2 text-[clamp(32px,6vw,56px)] font-medium
+                     leading-[1.1] tracking-[-0.02em] text-(--color-text)">
+            Muhammad<br />
+            <span class="text-(--color-accent)">Abdurrahman.</span>
+          </h1>
+          <p class="anim-3 mt-4 text-[15px] font-light text-(--color-muted) leading-[1.8]">
+            Teknisi & developer di Dinas Perhubungan Kota Mataram —
+            membangun sistem pemerintahan, tools AI, dan bisnis lokal.
+          </p>
+        </div>
+
+        <!-- Right: photo -->
+        <div class="anim-1 flex-shrink-0 self-start sm:self-center">
+          <div class="relative w-[88px] h-[110px] sm:w-[108px] sm:h-[135px]">
+            <!-- Accent border frame -->
+            <div class="absolute inset-0 rounded-lg
+                        border-2 border-(--color-accent)
+                        opacity-60 translate-x-1.5 translate-y-1.5"></div>
+            <img
+              src="/avatar.jpg"
+              alt="Muhammad Abdurrahman"
+              class="relative z-10 w-full h-full object-cover object-top
+                     rounded-lg grayscale-[50%] hover:grayscale-0
+                     transition-all duration-500"
+            />
+          </div>
+        </div>
+
+      </div>
 
       <!-- Terminal -->
       <div class="anim-4 mt-8 bg-(--color-bg2) border border-(--color-bdr) rounded-md overflow-hidden">
